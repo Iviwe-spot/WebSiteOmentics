@@ -6,7 +6,8 @@ import {
   MapPin, 
   Send,
   User,
-  Building
+  Building,
+  CheckCircle
 } from 'lucide-react';
 import '../styles/Contact.css';
 
@@ -19,6 +20,9 @@ const Contact = () => {
     message: ''
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -29,9 +33,48 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    
+    // Create email content
+    const subject = `Contact Form Submission from ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+    `;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:enquiry@omentics.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message after a short delay
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        
+        // Reset form after success message disappears
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      }, 5000);
+    }, 1000);
   };
+
+
 
   return (
     <section className="contact">
@@ -146,10 +189,23 @@ const Contact = () => {
               className="form-submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? 'Opening Email...' : 'Send Message'}
               <Send size={16} />
             </motion.button>
+
+            {isSubmitted && (
+              <motion.div
+                className="success-alert"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <CheckCircle className="success-alert-icon" size={16} />
+                <span>Email opened! We'll respond within 24 hours.</span>
+              </motion.div>
+            )}
           </form>
         </motion.div>
       </div>

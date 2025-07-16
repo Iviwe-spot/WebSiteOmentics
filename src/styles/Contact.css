@@ -153,6 +153,41 @@
   box-shadow: 0 4px 12px rgba(26, 26, 26, 0.3);
 }
 
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-submit:disabled:hover {
+  background-color: #1a1a1a;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success Alert Styles */
+.success-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #f0f9ff;
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.success-alert-icon {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.success-alert span {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
   .contact-container {
@@ -181,6 +216,14 @@
   .contact-details {
     gap: 1.5rem;
   }
+  
+  .success-alert {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .success-alert span {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -196,5 +239,13 @@
   .form-group textarea {
     padding: 0.8rem 0.8rem 0.8rem 2.5rem;
     font-size: 0.9rem;
+  }
+  
+  .success-alert {
+    padding: 0.5rem 0.7rem;
+  }
+  
+  .success-alert span {
+    font-size: 0.8rem;
   }
 }
