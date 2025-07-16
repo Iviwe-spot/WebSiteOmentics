@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ArrowRight} from 'lucide-react';
 import '../styles/Header.css';
-import headerImage from "../assets/Imgs/headerImg.svg";
+import headerImage from "../assets/Imgs/headersImg1.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
