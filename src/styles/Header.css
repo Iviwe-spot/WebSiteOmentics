@@ -15,14 +15,13 @@ html, body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  padding: 1rem 0;
-  /* Removed: overflow-x: hidden; */
+  padding: 0.25rem 0; 
 }
 
 .header.scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  padding: 0.75rem 0;
+  padding: 0.1rem 0; 
 }
 
 /* Navigation Container */
@@ -32,10 +31,9 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1rem; 
   box-sizing: border-box;
   width: 100%;
-  /* Removed: max-width: calc(100vw - 2rem); */
 }
 
 /* Logo */
@@ -55,7 +53,7 @@ html, body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem; 
   flex-shrink: 0;
 }
 
@@ -65,7 +63,7 @@ html, body {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 3rem;
+  gap: 1.5rem; 
 }
 
 .nav-link {
@@ -77,7 +75,7 @@ html, body {
   cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0; 
   white-space: nowrap;
 }
 
@@ -90,7 +88,7 @@ html, body {
   background: #000;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem; 
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -207,7 +205,7 @@ html, body {
 /* Responsive Design */
 @media (min-width: 769px) {
   .nav-container {
-    padding: 0 2rem;
+    padding: 0 1rem; /* Reduced from 0 2rem to 0 1rem */
   }
 
   .nav-right {
@@ -244,7 +242,6 @@ html, body {
 
   .nav-container {
     padding: 0 0.75rem;
-    /* Removed: max-width: calc(100vw - 1.5rem); */
   }
 
   .mobile-nav-links {
@@ -268,7 +265,6 @@ html, body {
 @media (max-width: 360px) {
   .nav-container {
     padding: 0 0.5rem;
-    /* Removed: max-width: calc(100vw - 1rem); */
   }
 
   .nav-logo img {

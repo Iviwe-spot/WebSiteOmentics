@@ -63,12 +63,11 @@ const Hero = () => {
             </span>
             <span className="cursor">|</span>
           </span>
-          <span className="bold-text">.</span>
         </h1>
         
         <p className="hero-description">
           Your mining data engineering team that helps your visualise and 
-          build data driven pipelines to optimise operations.
+          build data driven pipelines to optimise operations
         </p>
         
         <button 
@@ -76,7 +75,7 @@ const Hero = () => {
           onClick={scrollToContact}
         >
           Request Site Visit
-          <ArrowRight className="button-icon" size={20} />
+          <ArrowRight className="button-icon" size={18} />
         </button>
       </div>
     </section>

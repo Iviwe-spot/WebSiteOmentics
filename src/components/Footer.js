@@ -4,6 +4,8 @@ import {
   Mail, 
   MapPin,
   Linkedin,
+  Youtube,
+  Twitter,
 } from 'lucide-react';
 import '../styles/Footer.css';
 import footerLogo from "../assets/Imgs/footerImg.png";
@@ -34,6 +36,12 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/omentics/" className="social-link" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
+              <div className="social-link" aria-label="YouTube">
+                <Youtube size={20} />
+              </div>
+              <div className="social-link" aria-label="Twitter">
+                <Twitter size={20} />
+              </div>
             </div>
           </motion.div>
 
